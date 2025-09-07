@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SREEVIDYA FANS WEB</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      overflow-x: hidden;
+      color: #fff;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 3em;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px #ff0099, 0 0 40px #ff0099, 0 0 60px #ff0099;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Scrolling Image Bar */
+    .gallery-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 30px 0;
+      scrollbar-width: none;
+    }
+    .gallery-container::-webkit-scrollbar {display: none;}
+    .gallery {
+      display: inline-flex;
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .gallery img {
+      width: 260px;
+      height: 360px;
+      border-radius: 20px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.4s, box-shadow 0.4s;
+      box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255,255,255,0.9), 0 0 50px rgba(255,0,150,0.7);
+    }
+
+    /* Popup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(255,255,255,0.9);
+    }
+    .modal span {
+      position: absolute;
+      top: 20px; right: 40px;
+      font-size: 3em;
+      cursor: pointer;
+      color: #fff;
+      text-shadow: 0 0 15px #ff0099;
+    }
+
+    /* Telegram Button */
+    .telegram-btn {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .telegram-btn a {
+      background: linear-gradient(90deg, #0088cc, #00b4ff);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(0,136,204,0.9);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .telegram-btn a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0,180,255,1), 0 0 60px rgba(0,180,255,0.7);
+    }
+
+    /* Description */
+    .description {
+      background: rgba(0,0,0,0.5);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.8em;
+      border-radius: 25px 25px 0 0;
+      margin-top: 40px;
+      box-shadow: 0 -5px 30px rgba(255,255,255,0.2);
+    }
+    .description strong {
+      color: #ff0099;
+      font-size: 1.3em;
+      text-shadow: 0 0 10px #ff0099;
+    }
+
+    /* Floating Shapes */
+    .shapes span {
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      animation: float 20s linear infinite;
+      bottom: -150px;
+    }
+    @keyframes float {
+      0% {transform: translateY(0) rotate(0deg); opacity: 1;}
+      100% {transform: translateY(-1000px) rotate(720deg); opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Shapes -->
+  <div class="shapes">
+    <span style="left: 10%; width: 80px; height: 80px;"></span>
+    <span style="left: 30%; width: 50px; height: 50px;"></span>
+    <span style="left: 60%; width: 100px; height: 100px;"></span>
+    <span style="left: 80%; width: 70px; height: 70px;"></span>
+  </div>
+
+  <!-- Heading -->
+  <header>SREEVIDYA FANS WEB</header>
+
+  <!-- Scrolling Gallery -->
+  <div class="gallery-container">
+    <div class="gallery">
+      <img src="https://via.placeholder.com/260x360?text=Image+1" alt="Sreevidya 1" onclick="openModal(this.src)">
+      <img src="https://via.placeholder.com/260x360?text=Image+2" alt="Sreevidya 2" onclick="openModal(this.src)">
+      <img src="https://via.placeholder.com/260x360?text=Image+3" alt="Sreevidya 3" onclick="openModal(this.src)">
+      <img src="https://via.placeholder.com/260x360?text=Image+4" alt="Sreevidya 4" onclick="openModal(this.src)">
+    </div>
+  </div>
+
+  <!-- Telegram Button -->
+  <div class="telegram-btn">
+    <a href="https://t.me/+WyAKTZDcPsg5NjM1" target="_blank">💬 Join Telegram Group</a>
+  </div>
+
+  <!-- Description -->
+  <section class="description">
+    <p><strong>Sreevidya Mullacheri</strong> is one of the most admired Malayalam actresses, loved for her elegance, beauty, and charm. This fan website is a tribute to her journey, where admirers can celebrate her achievements, share updates, and connect with fellow fans. Stay tuned for more exciting content dedicated to her!</p>
+  </section>
+
+  <!-- Popup Modal -->
+  <div id="myModal" class="modal">
+    <span onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("myModal").style.display = "flex";
+      document.getElementById("modalImage").src = src;
+    }
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
